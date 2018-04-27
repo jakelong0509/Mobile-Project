@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="camera.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:camera"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CaptureElement Name="PreviewControl" Stretch="Uniform" Width="500px" Height="500px" VerticalAlignment="Stretch" Grid.Row="1" HorizontalAlignment="Center"  />
+        <Button Click="StartPreview" Content="Open Webcam" Grid.Row="0" HorizontalAlignment="Center">
+        </Button>
+        <RelativePanel Grid.Row="1">
+            <TextBlock  VerticalAlignment="Top" Name="lblName">Your Name:</TextBlock>
+            <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="128"  Name="userName" RelativePanel.RightOf="lblName" >
+            </TextBox>
+            <Button Name ="btnTakePicture" Content="Take Picture"  Click="TakePicture" RelativePanel.Below="userName" />
+            <Button Content="Register"  Click="Training" RelativePanel.RightOf="btnTakePicture" RelativePanel.Below="userName" />
+            <Button Content="Click Me To Login" Click="LoginPage" RelativePanel.Below="" RelativePanel.AlignVerticalCenterWithPanel="True" />
+        </RelativePanel>
+    </Grid>
+</Page>
